@@ -6,9 +6,12 @@ description = "Blinky Nimky"
 license = "Proprietary"
 srcDir = "src"
 bin = @["blinky"]
-binDir = "bin"
+binDir = "build"
 skipFiles = @["panicoverride.nim"]
 
 # Dependencies
 
 requires "nim >= 0.18.0"
+
+task bld, "debug build":
+    exec "nimble build --os:standalone"
